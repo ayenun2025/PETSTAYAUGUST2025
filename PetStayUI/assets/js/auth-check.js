@@ -19,8 +19,8 @@
   
       domain: 'us-east-1jaxo80xah.auth.us-east-1.amazoncognito.com', // Cognito Domain
       scope: ['email', 'openid', 'phone'], // OAuth scopes
-      redirectSignIn: 'https://main.d2xdpgtdqzn9rk.amplifyapp.com/admin-frontend/post-login.html', // Redirect Sign In URL
-      redirectSignOut: 'https://main.d2xdpgtdqzn9rk.amplifyapp.com/index.html', // Redirect Sign Out URL
+      redirectSignIn: 'https://main.d3sjnvblay5fjp.amplifyapp.com/admin-frontend/post-login.html', // Redirect Sign In URL
+      redirectSignOut: 'https://main.d3sjnvblay5fjp.amplifyapp.com/index.html', // Redirect Sign Out URL
       responseType: 'code', // OAuth flow (authorization code grant)
     }
   };

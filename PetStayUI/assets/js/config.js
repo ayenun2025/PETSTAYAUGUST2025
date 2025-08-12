@@ -5,9 +5,9 @@ window.PETSTAY_CONFIG = {
   COGNITO_USER_POOL_CLIENT_ID: '3dpsa80ai1mrogcluofao2ejsk',
   COGNITO_DOMAIN: 'us-east-1jaxo80xah.auth.us-east-1.amazoncognito.com',
 
-  REDIRECT_SIGN_IN_URL: 'https://main.d2xdpgtdqzn9rk.amplifyapp.com/admin-frontend/post-login.html',
-  REDIRECT_ADMIN_SIGN_IN_URL: 'https://main.d2xdpgtdqzn9rk.amplifyapp.com/admin-frontend/post-login.html',
-  REDIRECT_SIGN_OUT_URL: 'https://main.d2xdpgtdqzn9rk.amplifyapp.com/index.html',
+  REDIRECT_SIGN_IN_URL: 'https://main.d3sjnvblay5fjp.amplifyapp.com/admin-frontend/post-login.html',
+  REDIRECT_ADMIN_SIGN_IN_URL: 'https://main.d3sjnvblay5fjp.amplifyapp.com/admin-frontend/post-login.html',
+  REDIRECT_SIGN_OUT_URL: 'https://main.d3sjnvblay5fjp.amplifyapp.com/index.html',
 
   API_BASE_URL: 'https://cz87cyx5k1.execute-api.us-east-1.amazonaws.com/',
   BOOKING_API_URL: 'https://cz87cyx5k1.execute-api.us-east-1.amazonaws.com/booking',
