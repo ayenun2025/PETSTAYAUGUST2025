@@ -1,5 +1,5 @@
 
-
+//newaug
   console.log("auth-check.js loaded");
 
   // Load Amplify core modules from the global AWS Amplify script (if available)
@@ -15,8 +15,9 @@
     region: 'us-east-1', // Example: 'us-east-1'
     userPoolId: 'us-east-1_jaXO80Xah', // Cognito User Pool ID
     userPoolWebClientId: '3dpsa80ai1mrogcluofao2ejsk', // Cognito User Pool Client ID
-    oauth: {
-      domain: 'https://us-east-1jaxo80xah.auth.us-east-1.amazoncognito.com', // Cognito Domain
+      oauth: {
+  
+      domain: 'us-east-1jaxo80xah.auth.us-east-1.amazoncognito.com', // Cognito Domain
       scope: ['email', 'openid', 'phone'], // OAuth scopes
       redirectSignIn: 'https://main.d2xdpgtdqzn9rk.amplifyapp.com/admin-frontend/post-login.html', // Redirect Sign In URL
       redirectSignOut: 'https://main.d2xdpgtdqzn9rk.amplifyapp.com/index.html', // Redirect Sign Out URL
@@ -68,6 +69,7 @@
         updateAdminEmail(email);
 
         // Clean up query params if came back from Cognito
+        // If we came back from Cognito, clean up query params
         if (urlParams.get("from") === "cognito") {
           const cleanUrl = window.location.origin + window.location.pathname;
           window.history.replaceState({}, document.title, cleanUrl);
@@ -183,9 +185,12 @@
     };
 
     // Attach sign-out handler after DOM ready
+    /**
+   * When the page loads, attach the sign-out button event listener if found.
+   */
     document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
-        checkUser();
+        checkUser(); // Initial check 
 
         const retryAttachSignOut = () => {
           const signOutEl = document.getElementById("signOutBtn");
