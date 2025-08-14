@@ -31,18 +31,18 @@
                   <div class="col-md-4">
                     <div class="input-style-1">
                       <label class="form-label">Owner Name</label>
-                      <input type="text" name="ownerName" class="form-control" placeholder="Owner Name" required />
+                      <input type="text" name="OwnerName" class="form-control" placeholder="OwnerName" required />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="input-style-1">
                       <label class="form-label">Email Address</label>
-                      <input type="email" name="email" class="form-control" placeholder="owner@example.com" required />
+                      <input type="Email" name="Email" class="form-control" placeholder="owner@example.com" required />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="input-style-1">
-                      <label class="form-label">Phone Number</label>
+                      <label class="form-label">PhoneNumber</label>
                       <input type="tel" name="PhoneNumber" class="form-control" placeholder="+1 234 567 8900"
                         required />
                     </div>
@@ -54,8 +54,8 @@
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="input-style-1">
-                      <label class="form-label">Pet Photo</label>
-                      <input type="file" id="petPhoto" name="petPhoto" class="form-control"
+                      <label class="form-label">PetPhoto</label>
+                      <input type="file" id="PetPhoto" name="PetPhoto" class="form-control"
                         accept="image/jpeg, image/png" />
                       <small class="text-muted">Only JPG or PNG files, max 5MB.</small>
                       <div class="mt-2">
@@ -66,13 +66,13 @@
 
                   <div class="col-md-3">
                     <div class="input-style-1">
-                      <label class="form-label">Pet Name</label>
-                      <input type="text" name="petName" class="form-control" placeholder="Pet Name" required />
+                      <label class="form-label">PetName</label>
+                      <input type="text" name="petName" class="form-control" placeholder="PetName" required />
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="select-style-1">
-                      <label class="form-label">Pet Species</label>
+                      <label class="form-label">PetSpecies</label>
                       <div class="select-position">
                         <select name="petSpecies" class="form-select" required>
                           <option value="">Select Species</option>
@@ -84,13 +84,13 @@
                   </div>
                   <div class="col-md-3">
                     <div class="input-style-1">
-                      <label class="form-label">Pet Breed</label>
-                      <input type="text" name="petBreed" class="form-control" placeholder="Pet Breed" />
+                      <label class="form-label">PetBreed</label>
+                      <input type="text" name="petBreed" class="form-control" placeholder="PetBreed" />
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="input-style-1">
-                      <label class="form-label">Pet Age (in years)</label>
+                      <label class="form-label">PetAge (in years)</label>
                       <input type="number" name="petAge" class="form-control" placeholder="e.g., 2" min="0" step="0.1"
                         required />
                     </div>
@@ -164,7 +164,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       const form = document.getElementById("bookingForm");
       const overlay = document.getElementById("loadingOverlay");
-      const petPhotoInput = document.getElementById("petPhoto");
+      const PetPhotoInput = document.getElementById("PetPhoto");
 
       const showLoading = () => {
         overlay.style.display = "flex";
@@ -179,13 +179,13 @@
       // Image Preview
       if (petPhotoInput) {
         const previewImg = document.createElement("img");
-        previewImg.id = "petPreview";
+        previewImg.id = "PetPreview";
         previewImg.className = "img-thumbnail mt-2";
         previewImg.style.maxWidth = "200px";
         previewImg.style.display = "none";
-        petPhotoInput.parentElement.appendChild(previewImg);
+        PetPhotoInput.parentElement.appendChild(previewImg);
 
-        petPhotoInput.addEventListener("change", function () {
+        PetPhotoInput.addEventListener("change", function () {
           const file = this.files[0];
           if (!file) {
             previewImg.src = "";
@@ -235,7 +235,7 @@
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        petSpecies: species,
+        PetSpecies: species,
         contentType: file.type
       })
     });
@@ -291,22 +291,22 @@
 
         const formData = new FormData(form);
         const data = {
-          OwnerName: formData.get("ownerName"),
-          Email: formData.get("email"),
+          OwnerName: formData.get("OwnerName"),
+          Email: formData.get("Email"),
           PhoneNumber: formData.get("PhoneNumber"),
-          PetName: formData.get("petName"),
-          PetSpecies: formData.get("petSpecies"),
-          PetBreed: formData.get("petBreed"),
-          PetAge: formData.get("petAge"),
-          CheckInDate: formData.get("checkInDate"),
-          CheckOutDate: formData.get("checkOutDate"),
-          ArrivalTime: formData.get("arrivalTime")
+          PetName: formData.get("PetName"),
+          PetSpecies: formData.get("PetSpecies"),
+          PetBreed: formData.get("PetBreed"),
+          PetAge: formData.get("PetAge"),
+          CheckInDate: formData.get("CheckInDate"),
+          CheckOutDate: formData.get("CheckOutDate"),
+          ArrivalTime: formData.get("ArrivalTime")
         };
 
-        const photoFile = formData.get("petPhoto");
+        const photoFile = formData.get("PetPhoto");
         if (photoFile && photoFile.size > 0) {
           try {
-            const photoKey = await uploadPetPhoto(photoFile, formData.get("petSpecies"));
+            const photoKey = await uploadPetPhoto(photoFile, formData.get("PetSpecies"));
             data.PetPhotoKey = photoKey;
           } catch (err) {
             hideLoading();
