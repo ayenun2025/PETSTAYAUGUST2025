@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
   <div class="booking-wrapper">
     <main class="main-wrapper">
       <section class="tab-components">
@@ -31,20 +30,19 @@
                   <div class="col-md-4">
                     <div class="input-style-1">
                       <label class="form-label">Owner Name</label>
-                      <input type="text" name="OwnerName" class="form-control" placeholder="OwnerName" required />
+                      <input type="text" name="OwnerName" class="form-control" placeholder="Owner Name" required />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="input-style-1">
                       <label class="form-label">Email Address</label>
-                      <input type="Email" name="Email" class="form-control" placeholder="owner@example.com" required />
+                      <input type="email" name="Email" class="form-control" placeholder="owner@example.com" required />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="input-style-1">
-                      <label class="form-label">PhoneNumber</label>
-                      <input type="tel" name="PhoneNumber" class="form-control" placeholder="+1 234 567 8900"
-                        required />
+                      <label class="form-label">Phone Number</label>
+                      <input type="tel" name="PhoneNumber" class="form-control" placeholder="+1 234 567 8900" required />
                     </div>
                   </div>
                 </div>
@@ -54,27 +52,26 @@
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="input-style-1">
-                      <label class="form-label">PetPhoto</label>
-                      <input type="file" id="PetPhoto" name="PetPhoto" class="form-control"
-                        accept="image/jpeg, image/png" />
+                      <label class="form-label">Pet Photo</label>
+                      <input type="file" id="PetPhoto" name="PetPhoto" class="form-control" accept="image/jpeg, image/png" />
                       <small class="text-muted">Only JPG or PNG files, max 5MB.</small>
                       <div class="mt-2">
-                        <img id="previewPhoto" class="img-thumbnail d-none" style="max-width: 200px;" alt="Preview" />
+                        <img id="PetPreview" class="img-thumbnail" style="max-width: 200px; display:none;" alt="Preview" />
                       </div>
                     </div>
                   </div>
 
                   <div class="col-md-3">
                     <div class="input-style-1">
-                      <label class="form-label">PetName</label>
-                      <input type="text" name="petName" class="form-control" placeholder="PetName" required />
+                      <label class="form-label">Pet Name</label>
+                      <input type="text" name="PetName" class="form-control" placeholder="Pet Name" required />
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="select-style-1">
-                      <label class="form-label">PetSpecies</label>
+                      <label class="form-label">Pet Species</label>
                       <div class="select-position">
-                        <select name="petSpecies" class="form-select" required>
+                        <select name="PetSpecies" class="form-select" required>
                           <option value="">Select Species</option>
                           <option>Dog</option>
                           <option>Cat</option>
@@ -84,15 +81,14 @@
                   </div>
                   <div class="col-md-3">
                     <div class="input-style-1">
-                      <label class="form-label">PetBreed</label>
-                      <input type="text" name="petBreed" class="form-control" placeholder="PetBreed" />
+                      <label class="form-label">Pet Breed</label>
+                      <input type="text" name="PetBreed" class="form-control" placeholder="Pet Breed" />
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="input-style-1">
-                      <label class="form-label">PetAge (in years)</label>
-                      <input type="number" name="petAge" class="form-control" placeholder="e.g., 2" min="0" step="0.1"
-                        required />
+                      <label class="form-label">Pet Age (in years)</label>
+                      <input type="number" name="PetAge" class="form-control" placeholder="e.g., 2" min="0" step="0.1" required />
                     </div>
                   </div>
                 </div>
@@ -103,20 +99,20 @@
                   <div class="col-md-4">
                     <div class="input-style-1">
                       <label class="form-label">Check-In Date</label>
-                      <input type="date" name="checkInDate" class="form-control" required />
+                      <input type="date" name="CheckInDate" class="form-control" required />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="input-style-1">
                       <label class="form-label">Check-Out Date</label>
-                      <input type="date" name="checkOutDate" class="form-control" required />
+                      <input type="date" name="CheckOutDate" class="form-control" required />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="select-style-1">
                       <label class="form-label">Time of Arrival</label>
                       <div class="select-position">
-                        <select name="arrivalTime" class="form-select" required>
+                        <select name="ArrivalTime" class="form-select" required>
                           <option value="">Select Time</option>
                           <option value="10:00">10:00 AM</option>
                           <option value="10:15">10:15 AM</option>
@@ -147,30 +143,25 @@
     </main>
   </div>
 
-  <div id="loadingOverlay" style="
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
-  align-items: center; justify-content: center;
-  flex-direction: column;">
-    <div class="spinner-border text-primary" role="status" style="width: 4rem; height: 4rem;">
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" style="display:none; position: fixed; z-index:9999; top:0; left:0; right:0; bottom:0; background: rgba(255,255,255,0.8); display:flex; align-items:center; justify-content:center; flex-direction:column;">
+    <div class="spinner-border text-primary" role="status" style="width:4rem; height:4rem;">
       <span class="visually-hidden">Loading...</span>
     </div>
     <p class="mt-3 fw-semibold">Processing your booking...</p>
   </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const form = document.getElementById("bookingForm");
       const overlay = document.getElementById("loadingOverlay");
-      const PetPhotoInput = document.getElementById("PetPhoto");
+      const petPhotoInput = document.getElementById("PetPhoto");
+      const previewImg = document.getElementById("PetPreview");
 
       const showLoading = () => {
         overlay.style.display = "flex";
         form.querySelector("button[type='submit']").disabled = true;
       };
-
       const hideLoading = () => {
         overlay.style.display = "none";
         form.querySelector("button[type='submit']").disabled = false;
@@ -178,18 +169,11 @@
 
       // Image Preview
       if (petPhotoInput) {
-        const previewImg = document.createElement("img");
-        previewImg.id = "PetPreview";
-        previewImg.className = "img-thumbnail mt-2";
-        previewImg.style.maxWidth = "200px";
-        previewImg.style.display = "none";
-        PetPhotoInput.parentElement.appendChild(previewImg);
-
-        PetPhotoInput.addEventListener("change", function () {
+        petPhotoInput.addEventListener("change", function () {
           const file = this.files[0];
           if (!file) {
-            previewImg.src = "";
             previewImg.style.display = "none";
+            previewImg.src = "";
             return;
           }
 
@@ -197,7 +181,6 @@
           if (!allowedTypes.includes(file.type)) {
             alert("Only JPG or PNG files are allowed.");
             this.value = "";
-            previewImg.src = "";
             previewImg.style.display = "none";
             return;
           }
@@ -205,7 +188,6 @@
           if (file.size > 5 * 1024 * 1024) {
             alert("Maximum file size is 5MB.");
             this.value = "";
-            previewImg.src = "";
             previewImg.style.display = "none";
             return;
           }
@@ -215,75 +197,26 @@
         });
       }
 
-    async function uploadPetPhoto(file, speciesRaw) {
-  // Normalize species input
-  const species = speciesRaw?.trim().charAt(0).toUpperCase() + speciesRaw?.trim().slice(1).toLowerCase();
+      async function uploadPetPhoto(file, speciesRaw) {
+        const species = speciesRaw?.trim().charAt(0).toUpperCase() + speciesRaw?.trim().slice(1).toLowerCase();
+        const allowedSpecies = ["Dog", "Cat"];
+        if (!allowedSpecies.includes(species)) throw new Error("Invalid pet species. Must be Dog or Cat.");
 
-  const allowedSpecies = ["Dog", "Cat"];
-  if (!allowedSpecies.includes(species)) {
-    throw new Error("Invalid pet species. Must be 'Dog' or 'Cat'.");
-  }
+        // Get presigned URL
+        const response = await fetch(window.PETSTAY_CONFIG.PET_PHOTO_UPLOAD_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ PetSpecies: species, contentType: file.type })
+        });
+        if (!response.ok) throw new Error(`Upload URL request failed: ${response.statusText}`);
+        const { uploadUrl, key: photoKey } = await response.json();
+        if (!uploadUrl || !photoKey) throw new Error("Missing upload URL or photo key.");
 
-  console.log("Uploading pet photo for species:", species);
-
-  // Step 1: Get a presigned URL from the API
-  let response;
-  try {
-    response = await fetch(window.PETSTAY_CONFIG.PET_PHOTO_UPLOAD_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        PetSpecies: species,
-        contentType: file.type
-      })
-    });
-  } catch (err) {
-    throw new Error("Network error while requesting upload URL: " + err.message);
-  }
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    console.error("Upload URL fetch failed:", errorText);
-    throw new Error(`Upload URL request failed: ${response.statusText}`);
-  }
-
-  let uploadData;
-  try {
-    uploadData = await response.json();
-  } catch (err) {
-    throw new Error("Invalid JSON from upload URL response.");
-  }
-
-  const { uploadUrl, key: photoKey } = uploadData;
-  if (!uploadUrl || !photoKey) {
-    throw new Error("Missing upload URL or photo key in response.");
-  }
-
-  // Step 2: Upload the actual file to S3
-  try {
-    const uploadRes = await fetch(uploadUrl, {
-      method: "PUT",
-      headers: {
-        "Content-Type": file.type
-      },
-      body: file
-    });
-
-    if (!uploadRes.ok) {
-      const errorText = await uploadRes.text();
-      console.error("S3 upload failed:", errorText);
-      throw new Error("Failed to upload photo to S3.");
-    }
-
-    console.log("Upload successful. S3 key:", photoKey);
-    return photoKey;
-
-  } catch (err) {
-    throw new Error("Photo upload error: " + err.message);
-  }
-}
+        // Upload file to S3
+        const uploadRes = await fetch(uploadUrl, { method: "PUT", headers: { "Content-Type": file.type }, body: file });
+        if (!uploadRes.ok) throw new Error("Failed to upload photo to S3.");
+        return photoKey;
+      }
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -305,14 +238,8 @@
 
         const photoFile = formData.get("PetPhoto");
         if (photoFile && photoFile.size > 0) {
-          try {
-            const photoKey = await uploadPetPhoto(photoFile, formData.get("PetSpecies"));
-            data.PetPhotoKey = photoKey;
-          } catch (err) {
-            hideLoading();
-            alert("Photo upload failed: " + err.message);
-            return;
-          }
+          try { data.PetPhotoKey = await uploadPetPhoto(photoFile, formData.get("PetSpecies")); }
+          catch (err) { hideLoading(); alert("Photo upload failed: " + err.message); return; }
         }
 
         try {
@@ -321,31 +248,18 @@
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
           });
-
           if (!response.ok) throw new Error(`API error: ${response.status}`);
-
           const result = await response.json();
           const executionArn = result.executionArn?.trim();
           if (!executionArn) throw new Error("No executionArn returned!");
 
-          let tries = 0;
-          const maxTries = 30;
-
+          let tries = 0, maxTries = 30;
           async function poll() {
             tries++;
             const url = `${window.PETSTAY_CONFIG.BOOKING_STATUS_API_URL}/${encodeURIComponent(executionArn)}`;
-
             try {
               const statusRes = await fetch(url);
-              let statusData;
-
-              try {
-                statusData = await statusRes.json();
-              } catch (jsonErr) {
-                const raw = await statusRes.text();
-                throw new Error("Failed to parse JSON. Raw response:\n" + raw.slice(0, 200));
-              }
-
+              const statusData = await statusRes.json();
               console.log(`Polling attempt ${tries}:`, statusData);
 
               const status = statusData.status?.toUpperCase();
@@ -355,41 +269,25 @@
                   sessionStorage.setItem("BookingID", BookingID);
                   sessionStorage.setItem("OwnerName", OwnerName);
                   window.location.href = `booking-success.html?bookingId=${BookingID}`;
-                } else {
-                  hideLoading();
-                  alert("Booking succeeded, but booking ID or owner name is missing.");
-                }
+                } else { hideLoading(); alert("Booking succeeded but missing ID or owner name."); }
               } else if (status === "RUNNING" || status === "IN_PROGRESS") {
-                if (tries >= maxTries) {
-                  hideLoading();
-                  alert("Booking timed out. Please try again.");
-                } else {
-                  setTimeout(poll, 2000);
-                }
+                if (tries >= maxTries) { hideLoading(); alert("Booking timed out."); }
+                else { setTimeout(poll, 2000); }
               } else {
-                hideLoading();
-                alert(`Booking failed with status: ${status}`);
+                hideLoading(); alert(`Booking failed with status: ${status}`);
               }
-
-            } catch (err) {
-              hideLoading();
-              console.error("Polling error:", err);
-              alert("Error while checking booking status:\n" + err.message);
-            }
+            } catch (err) { hideLoading(); console.error(err); alert("Error checking booking status: " + err.message); }
           }
 
           poll();
-
         } catch (err) {
-          console.error(err);
-          alert("Booking failed: " + err.message);
-          hideLoading();
+          hideLoading(); console.error(err); alert("Booking failed: " + err.message);
         }
       });
+
     });
   </script>
-  
-  <!-- Footer -->
+
   <script src="../assets/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
